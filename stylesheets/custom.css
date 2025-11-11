@@ -43,53 +43,82 @@
    WCAG 2.2 Compliant Navigation
    ================================ */
 
-/* Ensure navigation menu items are keyboard accessible */
+/* Ensure navigation menu items are keyboard accessible - Enhanced */
 .md-nav__link {
-  min-height: 44px;
+  min-height: 48px;
   display: flex;
   align-items: center;
-  padding: 0.75rem 1rem;
+  padding: 0.875rem 1.25rem;
+  font-size: 1rem;
+  transition: all 0.2s ease;
 }
 
 /* Visible focus for navigation items */
 .md-nav__link:focus {
-  outline: 3px solid #00A896 !important;
-  outline-offset: 2px;
-  background-color: rgba(0, 168, 150, 0.1);
+  outline: 4px solid #00A896 !important;
+  outline-offset: 3px;
+  background-color: rgba(0, 168, 150, 0.15);
+  transform: translateX(4px);
 }
 
 /* Active navigation highlighting */
 .md-nav__link--active {
   color: #00A896;
   font-weight: 700;
+  border-left: 4px solid #00A896;
+  background-color: rgba(0, 168, 150, 0.08);
 }
 
 /* Hover state for navigation */
 .md-nav__link:hover {
-  background-color: rgba(0, 168, 150, 0.05);
+  background-color: rgba(0, 168, 150, 0.1);
   color: #00A896;
+  transform: translateX(2px);
 }
 
 /* Ensure dropdown menu items are accessible */
 .md-nav__item--nested > .md-nav__link:focus {
-  outline: 3px solid #00A896;
-  background-color: rgba(0, 168, 150, 0.15);
+  outline: 4px solid #00A896;
+  outline-offset: 2px;
+  background-color: rgba(0, 168, 150, 0.2);
 }
 
-/* Tab navigation accessibility */
+/* Tab navigation accessibility - Enhanced sizing */
+.md-tabs__item {
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+}
+
 .md-tabs__link {
-  min-height: 44px;
-  padding: 0.75rem 1.25rem;
+  min-height: 56px;
+  min-width: 48px;
+  padding: 1rem 1.75rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
 }
 
 .md-tabs__link:focus {
-  outline: 3px solid #0D0D0D !important;
-  outline-offset: 2px;
-  background-color: rgba(255, 215, 63, 0.3);
+  outline: 4px solid #0D0D0D !important;
+  outline-offset: 3px;
+  background-color: rgba(255, 215, 63, 0.4);
+  transform: scale(1.05);
 }
 
 .md-tabs__link:hover {
-  background-color: rgba(0, 168, 150, 0.1);
+  background-color: rgba(0, 168, 150, 0.15);
+  color: #00A896;
+  transform: scale(1.02);
+}
+
+.md-tabs__link--active {
+  color: #00A896;
+  font-weight: 700;
+  border-bottom: 4px solid #00A896;
 }
 
 /* Search button accessibility */
@@ -235,15 +264,23 @@ a:focus {
   z-index: 2;
 }
 
-/* Hero image styling */
+/* Hero image styling - Full width */
 .hero-image {
-  width: 100%;
-  max-width: 1200px;
+  width: 100vw;
+  max-width: 100vw;
   height: auto;
-  margin: 0 auto 2rem;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  margin-bottom: 2rem;
+  margin-top: -1rem;
   display: block;
-  border-radius: 8px;
+  border-radius: 0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Ensure hero image container doesn't create overflow */
+.md-content__inner {
+  overflow-x: hidden;
 }
 
 /* Alternative: Hero with background image */
@@ -331,6 +368,26 @@ a:focus {
   
   .blog-card {
     padding: 1rem;
+  }
+  
+  /* Full width hero images on mobile */
+  .hero-image {
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    width: 100vw;
+  }
+  
+  /* Larger tap targets on mobile */
+  .md-tabs__link {
+    min-height: 56px;
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+  }
+  
+  .md-nav__link {
+    min-height: 52px;
+    padding: 1rem 1.25rem;
+    font-size: 1.05rem;
   }
 }
 

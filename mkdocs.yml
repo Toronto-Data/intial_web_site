@@ -1,0 +1,60 @@
+site_name: Toronto AI and Data
+site_description: AI development studio building plugins and mentoring innovators
+site_author: Toronto AI and Data
+site_url: https://torontoaidata.com
+
+theme:
+  name: material
+  palette:
+    scheme: default  # LIGHT MODE
+    primary: custom
+    accent: custom
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.integrate  # Integrate table of contents into navigation
+  logo: assets/logo.png
+  favicon: assets/favicon.png
+
+extra_css:
+  - stylesheets/custom.css
+
+nav:
+  - Home: index.md
+  - AI Hackathons: hackathons.md
+  - Strategic Partners:
+      - Wuji Xuan Life Wellness: partners/wuji-xuan.md
+      - Becoming a Partner: partners/becoming-partner.md
+  - Resources: resources.md
+  - Blog: blog/index.md
+  - About Us: about.md
+
+plugins:
+  - search
+  - blogging:
+      dirs:
+        - blog
+      size: 10
+      sort:
+        from: new
+        by: creation
+      paging: false
+      show_total: true
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg

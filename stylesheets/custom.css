@@ -519,26 +519,27 @@ tr:nth-child(even) {
 }
 
 /* ================================
-   HIDE TABLE OF CONTENTS
-   Removes TOC sidebar and in-page TOC
+   HIDE TABLE OF CONTENTS ONLY
+   Removes ONLY the right TOC sidebar, keeps main navigation
    ================================ */
 
-/* Hide right sidebar (table of contents) */
+/* Hide ONLY right sidebar (table of contents) - NOT left navigation */
 .md-sidebar--secondary {
   display: none !important;
 }
 
-/* Hide in-page table of contents */
-.md-sidebar__scrollwrap {
+/* Hide TOC scrollwrap ONLY in secondary sidebar */
+.md-sidebar--secondary .md-sidebar__scrollwrap {
   display: none !important;
 }
 
-/* Hide any TOC navigation elements */
+/* Hide any TOC navigation elements (not main nav) */
 nav[aria-label="Table of contents"],
-.md-nav--secondary,
-.toc {
+.md-nav--secondary {
   display: none !important;
 }
+
+/* DO NOT hide .toc as it might affect other elements */
 
 /* Expand main content area when TOC is hidden */
 .md-content {
@@ -559,8 +560,14 @@ nav[aria-label="Table of contents"],
     max-width: 100%;
   }
   
+  /* Only hide secondary sidebar, keep primary navigation visible */
   .md-sidebar--secondary {
     display: none !important;
+  }
+  
+  /* Ensure primary navigation stays visible */
+  .md-sidebar--primary {
+    display: block !important;
   }
 }
 

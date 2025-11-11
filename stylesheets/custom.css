@@ -1,0 +1,112 @@
+:root {
+  --md-primary-fg-color: #00A896;        /* Teal - Primary */
+  --md-primary-fg-color--light: #00C4AD;
+  --md-primary-fg-color--dark: #008C7A;
+  --md-accent-fg-color: #FF6F61;         /* Coral - Accent */
+  --md-accent-fg-color--transparent: rgba(255, 111, 97, 0.1);
+  --md-default-bg-color: #FEFEFE;        /* White - Background */
+  --md-default-fg-color: #0D0D0D;        /* Black - Text */
+  --md-code-hl-color: #FFD23F;           /* Gold - Highlight */
+}
+
+/* Typography */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #0D0D0D;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #0D0D0D;
+}
+
+/* Primary buttons */
+.md-button--primary {
+  background-color: #00A896;
+  color: #FEFEFE;
+  border: none;
+}
+
+.md-button--primary:hover {
+  background-color: #FFD23F;
+  color: #0D0D0D;
+}
+
+/* Links */
+a {
+  color: #FF6F61;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #00A896;
+}
+
+/* Cards for blog */
+.blog-card {
+  border: 2px solid #00A896;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  background: #FEFEFE;
+  box-shadow: 0 2px 4px rgba(0, 168, 150, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(255, 111, 97, 0.2);
+  border-color: #FF6F61;
+}
+
+.blog-card h3 {
+  color: #00A896;
+  margin-top: 0;
+}
+
+.blog-card .badge {
+  background-color: #FFD23F;
+  color: #0D0D0D;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Hero sections */
+.hero {
+  background: linear-gradient(135deg, #00A896 0%, #00C4AD 100%);
+  color: #FEFEFE;
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.hero h1 {
+  color: #FEFEFE;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Call-to-action buttons */
+.cta-button {
+  background-color: #FF6F61;
+  color: #FEFEFE;
+  padding: 0.75rem 2rem;
+  border-radius: 4px;
+  font-weight: 600;
+  display: inline-block;
+  margin: 0.5rem;
+  transition: all 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #FFD23F;
+  color: #0D0D0D;
+  transform: scale(1.05);
+  text-decoration: none;
+}
+

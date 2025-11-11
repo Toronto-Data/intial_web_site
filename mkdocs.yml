@@ -20,7 +20,7 @@ theme:
     - search.suggest
     - search.highlight
     - content.code.copy
-    - toc.integrate  # Integrate table of contents into navigation
+    - navigation.instant  # Faster page loads
   logo: assets/logo.png
   favicon: assets/favicon.png
 

@@ -38,6 +38,70 @@
   text-decoration: none;
 }
 
+/* ================================
+   NAVIGATION MENU ACCESSIBILITY
+   WCAG 2.2 Compliant Navigation
+   ================================ */
+
+/* Ensure navigation menu items are keyboard accessible */
+.md-nav__link {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+}
+
+/* Visible focus for navigation items */
+.md-nav__link:focus {
+  outline: 3px solid #00A896 !important;
+  outline-offset: 2px;
+  background-color: rgba(0, 168, 150, 0.1);
+}
+
+/* Active navigation highlighting */
+.md-nav__link--active {
+  color: #00A896;
+  font-weight: 700;
+}
+
+/* Hover state for navigation */
+.md-nav__link:hover {
+  background-color: rgba(0, 168, 150, 0.05);
+  color: #00A896;
+}
+
+/* Ensure dropdown menu items are accessible */
+.md-nav__item--nested > .md-nav__link:focus {
+  outline: 3px solid #00A896;
+  background-color: rgba(0, 168, 150, 0.15);
+}
+
+/* Tab navigation accessibility */
+.md-tabs__link {
+  min-height: 44px;
+  padding: 0.75rem 1.25rem;
+}
+
+.md-tabs__link:focus {
+  outline: 3px solid #0D0D0D !important;
+  outline-offset: 2px;
+  background-color: rgba(255, 215, 63, 0.3);
+}
+
+.md-tabs__link:hover {
+  background-color: rgba(0, 168, 150, 0.1);
+}
+
+/* Search button accessibility */
+.md-search__form {
+  min-height: 44px;
+}
+
+.md-search__input:focus {
+  outline: 3px solid #00A896;
+  outline-offset: 2px;
+}
+
 /* Typography */
 body {
   font-family: 'Roboto', sans-serif;
@@ -397,20 +461,49 @@ tr:nth-child(even) {
   white-space: normal;
 }
 
-/* Hide table of contents sidebar */
+/* ================================
+   HIDE TABLE OF CONTENTS
+   Removes TOC sidebar and in-page TOC
+   ================================ */
+
+/* Hide right sidebar (table of contents) */
 .md-sidebar--secondary {
-  display: none;
+  display: none !important;
+}
+
+/* Hide in-page table of contents */
+.md-sidebar__scrollwrap {
+  display: none !important;
+}
+
+/* Hide any TOC navigation elements */
+nav[aria-label="Table of contents"],
+.md-nav--secondary,
+.toc {
+  display: none !important;
 }
 
 /* Expand main content area when TOC is hidden */
 .md-content {
-  max-width: 100%;
+  max-width: 100% !important;
+}
+
+.md-main__inner {
+  margin-right: 0 !important;
 }
 
 /* Remove right padding when TOC is hidden */
 @media screen and (min-width: 76.25em) {
   .md-content {
-    margin-right: 0;
+    margin-right: 0 !important;
+  }
+  
+  .md-grid {
+    max-width: 100%;
+  }
+  
+  .md-sidebar--secondary {
+    display: none !important;
   }
 }
 

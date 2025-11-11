@@ -1,7 +1,7 @@
 site_name: Toronto AI and Data
 site_description: AI development studio building plugins and mentoring innovators
 site_author: Toronto AI and Data
-site_url: https://torontoaidata.com
+site_url: https://toronto-data.github.io/intial_web_site/
 
 theme:
   name: material

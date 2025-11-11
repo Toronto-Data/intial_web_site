@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-labelledby="heroTitle heroDesc">
+  <title id="heroTitle">Toronto AI and Data - Building the Future of AI Innovation</title>
+  <desc id="heroDesc">Illustration featuring AI and data visualization elements with the Toronto AI and Data brand colors and mission statement</desc>
+  
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00A896;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00C4AD;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF6F61;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFD23F;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Halftone pattern for comic effect -->
+    <pattern id="halftone" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="5" r="2" fill="#FEFEFE" opacity="0.1"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="600" fill="url(#bgGradient)"/>
+  <rect width="1200" height="600" fill="url(#halftone)"/>
+  
+  <!-- Decorative geometric shapes (comic book style) -->
+  <polygon points="50,50 150,80 120,150 40,130" fill="#FFD23F" opacity="0.3"/>
+  <polygon points="1050,400 1150,450 1100,520 1000,480" fill="#FF6F61" opacity="0.3"/>
+  <circle cx="950" cy="100" r="60" fill="#FEFEFE" opacity="0.15"/>
+  <circle cx="200" cy="500" r="80" fill="#FEFEFE" opacity="0.15"/>
+  
+  <!-- Data visualization elements -->
+  <g opacity="0.4">
+    <!-- Neural network nodes -->
+    <circle cx="150" cy="250" r="8" fill="#FEFEFE"/>
+    <circle cx="200" cy="200" r="8" fill="#FEFEFE"/>
+    <circle cx="200" cy="300" r="8" fill="#FEFEFE"/>
+    <circle cx="250" cy="250" r="8" fill="#FEFEFE"/>
+    <line x1="150" y1="250" x2="200" y2="200" stroke="#FEFEFE" stroke-width="2"/>
+    <line x1="150" y1="250" x2="200" y2="300" stroke="#FEFEFE" stroke-width="2"/>
+    <line x1="200" y1="200" x2="250" y2="250" stroke="#FEFEFE" stroke-width="2"/>
+    <line x1="200" y1="300" x2="250" y2="250" stroke="#FEFEFE" stroke-width="2"/>
+    
+    <!-- Code brackets -->
+    <text x="1000" y="200" font-family="monospace" font-size="80" fill="#FEFEFE" opacity="0.3">&lt;/&gt;</text>
+    
+    <!-- Data bars -->
+    <rect x="900" y="350" width="20" height="80" fill="#FFD23F"/>
+    <rect x="930" y="320" width="20" height="110" fill="#FFD23F"/>
+    <rect x="960" y="300" width="20" height="130" fill="#FFD23F"/>
+    <rect x="990" y="280" width="20" height="150" fill="#FFD23F"/>
+  </g>
+  
+  <!-- Main content container -->
+  <g>
+    <!-- Border accent -->
+    <rect x="100" y="150" width="1000" height="300" fill="none" stroke="#FEFEFE" stroke-width="4" rx="10"/>
+    <rect x="95" y="145" width="1010" height="310" fill="none" stroke="#FFD23F" stroke-width="3" rx="12"/>
+    
+    <!-- Text content -->
+    <text x="600" y="220" font-family="Montserrat, sans-serif" font-size="48" font-weight="700" fill="#FEFEFE" text-anchor="middle">
+      TORONTO AI &amp; DATA
+    </text>
+    
+    <text x="600" y="280" font-family="Roboto, sans-serif" font-size="28" font-weight="400" fill="#FEFEFE" text-anchor="middle">
+      Building AI Solutions • Mentoring Innovators
+    </text>
+    
+    <text x="600" y="340" font-family="Roboto, sans-serif" font-size="22" font-weight="400" fill="#FFD23F" text-anchor="middle">
+      Transforming Ideas into Impact Through Hackathons &amp; Plugins
+    </text>
+    
+    <!-- Decorative underline -->
+    <line x1="300" y1="360" x2="900" y2="360" stroke="#FF6F61" stroke-width="3"/>
+  </g>
+  
+  <!-- Bottom tagline -->
+  <g opacity="0.8">
+    <text x="600" y="550" font-family="Roboto, sans-serif" font-size="18" font-weight="600" fill="#FEFEFE" text-anchor="middle" letter-spacing="2">
+      INNOVATION • MENTORSHIP • ROI-FOCUSED SOLUTIONS
+    </text>
+  </g>
+  
+  <!-- Comic-style accent marks -->
+  <polygon points="120,170 140,180 130,200" fill="#FF6F61"/>
+  <polygon points="1080,420 1070,440 1090,435" fill="#FFD23F"/>
+</svg>
+

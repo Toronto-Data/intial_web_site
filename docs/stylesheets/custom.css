@@ -53,6 +53,10 @@
   transition: all 0.2s ease;
 }
 
+.md-header__button.md-logo {
+  height: 6rem;
+}
+
 /* Visible focus for navigation items */
 .md-nav__link:focus {
   outline: 4px solid #00A896 !important;

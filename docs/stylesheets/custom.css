@@ -167,7 +167,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Links - WCAG 2.2 compliant */
 a {
-  color: #0D0D0D;
+  color: #FFFFFF;
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
@@ -175,7 +175,7 @@ a {
 
 a:hover {
   text-decoration-thickness: 2px;
-  color: #00A896;
+  color: #0D0D0D;
 }
 
 a:focus {

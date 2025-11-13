@@ -181,7 +181,7 @@ a {
   opacity: 1.0;
 }
 
-a:hover {
+.md-tabs__link:hover {
   text-decoration-thickness: 2px;
   color: #0D0D0D;
 }

@@ -21,7 +21,7 @@ theme:
     - search.highlight
     - content.code.copy
     - navigation.instant  # Faster page loads
-  logo: assets/logo.png
+  logo: assets/toronto_ai_logo.png
   favicon: assets/favicon.png
 
 extra_css:

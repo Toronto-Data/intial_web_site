@@ -1,0 +1,1341 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Building AI-powered customer segmentation for e-commerce">
+      
+      
+        <meta name="author" content="Toronto AI and Data">
+      
+      
+        <link rel="canonical" href="https://toronto-data.github.io/intial_web_site/hackathons/july_2024_hackathon/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>July 2024 Customer Insights Engine - Toronto AI and Data</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#july-2024-customer-insights-engine" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Toronto AI and Data" class="md-header__button md-logo" aria-label="Toronto AI and Data" data-md-component="logo">
+      
+  <img src="../../assets/toronto_ai_logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Toronto AI and Data
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              July 2024 Customer Insights Engine
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AI Hackathons
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../partners/wuji-xuan/" class="md-tabs__link">
+          
+  
+  
+  Strategic Partners
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../resources/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Resources
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../blog/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Blog
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About Us
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Toronto AI and Data" class="md-nav__button md-logo" aria-label="Toronto AI and Data" data-md-component="logo">
+      
+  <img src="../../assets/toronto_ai_logo.png" alt="logo">
+
+    </a>
+    Toronto AI and Data
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Hackathons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strategic Partners
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Strategic Partners
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../partners/wuji-xuan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wuji Xuan Life Wellness
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../partners/becoming-partner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Becoming a Partner
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About Us
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Challenge
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#results-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results &amp; Impact
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Results &amp; Impact">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#winning-team-segmentai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Winning Team: SegmentAI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Approaches
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Approaches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#team-1-segmentai-winner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Team 1: SegmentAI (Winner)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#team-2-insighthub" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Team 2: InsightHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#team-3-customeriq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Team 3: CustomerIQ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-participants-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Participants Learned
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#business-impact-stories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Impact Stories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Business Impact Stories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#case-study-artisan-candle-co" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Case Study: Artisan Candle Co.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-study-wellness-haven" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Case Study: Wellness Haven
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-learnings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Learnings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Learnings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#technical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#business" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collaboration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Collaboration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-deep-dive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Deep Dive
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Deep Dive">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rfm-analysis-explained" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RFM Analysis Explained
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clustering-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clustering Approach
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#media-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Media &amp; Documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Media &amp; Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-repositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Repositories
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#presentations-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Presentations &amp; Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blog-posts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blog Posts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partner-businesses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Partner Businesses
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Partner Businesses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#artisan-candle-co" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Artisan Candle Co.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wellness-haven" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wellness Haven
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#greeneco-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GreenEco Store
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#techstyle-apparel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TechStyle Apparel
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event Highlights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mentor-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mentor Insights
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mentor Insights">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jeff-cogswells-architecture-workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jeff Cogswell's Architecture Workshop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thomas-seebers-data-storytelling-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thomas Seeber's Data Storytelling Session
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="july-2024-customer-insights-engine">July 2024: Customer Insights Engine</h1>
+<div class="hero">
+  <h1>Completed Hackathon</h1>
+  <p>July 19-21, 2024 | Toronto, ON</p>
+</div>
+
+<div class="admonition success">
+<p class="admonition-title">Event Complete</p>
+<p>Successfully deployed 2 customer segmentation plugins helping 4 businesses understand their customers better.</p>
+</div>
+<hr />
+<h2 id="the-challenge">The Challenge</h2>
+<p>Build AI-powered customer segmentation tools for e-commerce platforms that help small businesses understand their customers, identify high-value segments, and personalize marketing efforts.</p>
+<h2 id="results-impact">Results &amp; Impact</h2>
+<h3 id="metrics">Metrics</h3>
+<ul>
+<li><strong>Participants:</strong> 12 developers</li>
+<li><strong>Teams:</strong> 3 teams</li>
+<li><strong>Solutions Deployed:</strong> 2 production plugins</li>
+<li><strong>Businesses Served:</strong> 4 e-commerce stores</li>
+<li><strong>Average Marketing ROI Increase:</strong> 25%</li>
+</ul>
+<h3 id="winning-team-segmentai">Winning Team: SegmentAI</h3>
+<p><strong>Team Members:</strong> Emily Wong, David Kim, Priya Sharma</p>
+<p><strong>Solution:</strong> Built an unsupervised learning model that automatically segments customers based on:
+- Purchase history and frequency
+- Average order value
+- Product category preferences
+- Engagement patterns</p>
+<p>The plugin integrates with Shopify and provides actionable marketing recommendations for each segment.</p>
+<p><strong>Business Impact:</strong> Deployed to 2 businesses, increasing repeat purchase rate by 40% and reducing marketing costs by 20%.</p>
+<hr />
+<h2 id="technical-approaches">Technical Approaches</h2>
+<h3 id="team-1-segmentai-winner">Team 1: SegmentAI (Winner)</h3>
+<ul>
+<li><strong>Stack:</strong> Python, scikit-learn (K-Means clustering), Flask, React dashboard</li>
+<li><strong>ML Approach:</strong> RFM (Recency, Frequency, Monetary) analysis + K-Means clustering</li>
+<li><strong>Deployment:</strong> AWS EC2 + S3</li>
+<li><strong>Key Features:</strong></li>
+<li>Automatic customer segmentation (5-8 segments)</li>
+<li>Email campaign recommendations per segment</li>
+<li>Visual dashboard with segment characteristics</li>
+<li>Monthly automated re-segmentation</li>
+</ul>
+<h3 id="team-2-insighthub">Team 2: InsightHub</h3>
+<ul>
+<li><strong>Stack:</strong> Python, DBSCAN, FastAPI, Vue.js</li>
+<li><strong>ML Approach:</strong> Density-based clustering with anomaly detection for VIP customers</li>
+<li><strong>Deployment:</strong> DigitalOcean + MongoDB</li>
+<li><strong>Key Features:</strong></li>
+<li>VIP customer identification</li>
+<li>Churn risk prediction</li>
+<li>Personalized product recommendations</li>
+<li>Integration with email marketing tools</li>
+</ul>
+<h3 id="team-3-customeriq">Team 3: CustomerIQ</h3>
+<ul>
+<li><strong>Stack:</strong> Python, Hierarchical clustering, Django, PostgreSQL</li>
+<li><strong>ML Approach:</strong> Hierarchical clustering with custom distance metrics</li>
+<li><strong>Deployment:</strong> In development</li>
+<li><strong>Key Features:</strong></li>
+<li>Multi-level customer hierarchies</li>
+<li>Predictive lifetime value scoring</li>
+<li>Segment evolution tracking</li>
+</ul>
+<hr />
+<h2 id="what-participants-learned">What Participants Learned</h2>
+<blockquote>
+<p>"I learned how to translate business questions into data science problems. Working directly with a business owner who couldn't afford expensive analytics tools was eye-opening."<br />
+— <strong>Emily Wong, Data Science Student, York University</strong></p>
+<p>"The most valuable part was learning how to present technical findings to non-technical stakeholders. Our visualizations needed to be simple enough for a busy business owner to understand in 30 seconds."<br />
+— <strong>David Kim, Software Engineer</strong></p>
+<p>"Understanding that model accuracy isn't everything—the business owner needs to trust the system and understand why customers are grouped the way they are. Explainability is key."<br />
+— <strong>Priya Sharma, Junior Data Analyst</strong></p>
+</blockquote>
+<hr />
+<h2 id="business-impact-stories">Business Impact Stories</h2>
+<h3 id="case-study-artisan-candle-co">Case Study: Artisan Candle Co.</h3>
+<p><strong>Challenge:</strong> Growing customer base but unclear who their most valuable customers were and how to target marketing.</p>
+<p><strong>Solution:</strong> SegmentAI identified 5 customer segments:
+1. <strong>Gift Givers</strong> (25% of customers, high frequency, seasonal)
+2. <strong>Bulk Buyers</strong> (10% of customers, low frequency, high value)
+3. <strong>Subscription Enthusiasts</strong> (15% of customers, monthly recurring)
+4. <strong>First-time Browsers</strong> (40% of customers, at-risk churn)
+5. <strong>Brand Advocates</strong> (10% of customers, high engagement, moderate spend)</p>
+<p><strong>Actions Taken:</strong>
+- Targeted email campaigns for each segment
+- Special offers for Gift Givers during holidays
+- Loyalty program for Brand Advocates
+- Re-engagement campaign for First-time Browsers</p>
+<p><strong>Results After 2 Months:</strong>
+- 40% increase in repeat purchase rate
+- 20% reduction in marketing costs (better targeting)
+- 15% increase in average order value
+- $8,000 additional monthly revenue</p>
+<hr />
+<h3 id="case-study-wellness-haven">Case Study: Wellness Haven</h3>
+<p><strong>Challenge:</strong> E-commerce wellness products store struggling to understand customer behavior patterns.</p>
+<p><strong>Solution:</strong> InsightHub's density-based approach identified:
+- 3 core customer groups
+- 12 VIP customers who drive 30% of revenue
+- High churn risk among first-time purchasers</p>
+<p><strong>Actions Taken:</strong>
+- VIP customer concierge program
+- First-purchase discount + follow-up sequence
+- Product bundles based on segment preferences</p>
+<p><strong>Results After 6 Weeks:</strong>
+- 28% reduction in customer churn
+- $12,000 saved in wasted marketing spend
+- Improved customer satisfaction scores</p>
+<hr />
+<h2 id="key-learnings">Key Learnings</h2>
+<h3 id="technical">Technical</h3>
+<ul>
+<li>Feature engineering matters more than algorithm choice</li>
+<li>Explainability is crucial for business adoption</li>
+<li>Real-time vs. batch processing trade-offs</li>
+<li>Handling sparse data and cold-start problems</li>
+</ul>
+<h3 id="business">Business</h3>
+<ul>
+<li>Small businesses need actionable insights, not just data</li>
+<li>Visualization and UX are as important as the ML model</li>
+<li>Integration with existing tools (email, CRM) drives adoption</li>
+<li>ROI measurement is essential for continued use</li>
+</ul>
+<h3 id="collaboration">Collaboration</h3>
+<ul>
+<li>Cross-functional teams (developers + business) work best</li>
+<li>Regular check-ins with business owners improved solutions</li>
+<li>Documentation matters for handoff and maintenance</li>
+<li>Teaching stakeholders to interpret results is part of the project</li>
+</ul>
+<hr />
+<h2 id="technical-deep-dive">Technical Deep Dive</h2>
+<h3 id="rfm-analysis-explained">RFM Analysis Explained</h3>
+<p>The winning team used RFM analysis as the foundation:</p>
+<p><strong>Recency:</strong> How recently did the customer make a purchase?<br />
+<strong>Frequency:</strong> How often do they purchase?<br />
+<strong>Monetary:</strong> How much do they spend?</p>
+<p>Each customer gets scored 1-5 on each dimension, creating a 3D space for clustering.</p>
+<h3 id="clustering-approach">Clustering Approach</h3>
+<div class="highlight"><pre><span></span><code>1. Data Collection (Shopify API)
+   ↓
+2. Feature Engineering (RFM + behavioral)
+   ↓
+3. Normalization &amp; Scaling
+   ↓
+4. K-Means Clustering (k=5-8)
+   ↓
+5. Segment Characterization
+   ↓
+6. Actionable Recommendations
+   ↓
+7. Dashboard Visualization
+</code></pre></div>
+<h3 id="key-metrics">Key Metrics</h3>
+<ul>
+<li><strong>Silhouette Score:</strong> 0.62 (good separation)</li>
+<li><strong>Within-Cluster Sum of Squares:</strong> Optimal at k=6</li>
+<li><strong>Business Validation:</strong> Segments aligned with owner's intuition</li>
+</ul>
+<hr />
+<h2 id="media-documentation">Media &amp; Documentation</h2>
+<h3 id="project-repositories">Project Repositories</h3>
+<ul>
+<li><a href="https://github.com/toronto-ai-data/segmentai">SegmentAI GitHub Repo</a> - ⭐ 94 stars</li>
+<li><a href="https://github.com/toronto-ai-data/insighthub">InsightHub GitHub Repo</a> - ⭐ 67 stars</li>
+</ul>
+<h3 id="presentations-resources">Presentations &amp; Resources</h3>
+<ul>
+<li><a href="#">Final Presentation Slides (PDF)</a></li>
+<li><a href="#">Customer Segmentation Guide (eBook)</a></li>
+<li><a href="#">Technical Implementation Docs</a></li>
+</ul>
+<h3 id="blog-posts">Blog Posts</h3>
+<ul>
+<li><a href="../../blog/data-to-decisions/">From Data to Decisions: How AI Transforms Business Strategy</a></li>
+<li><a href="../../blog/measuring-ai-roi/">Measuring AI ROI: What Actually Matters</a></li>
+</ul>
+<hr />
+<h2 id="partner-businesses">Partner Businesses</h2>
+<p>Special thanks to our partner businesses:</p>
+<h3 id="artisan-candle-co">Artisan Candle Co.</h3>
+<p><strong>Type:</strong> Handmade candles and home fragrance<br />
+<strong>Customers:</strong> 2,500+ in database<br />
+<strong>Plugin Deployed:</strong> SegmentAI<br />
+<strong>Result:</strong> 40% increase in repeat purchases</p>
+<h3 id="wellness-haven">Wellness Haven</h3>
+<p><strong>Type:</strong> Health and wellness products<br />
+<strong>Customers:</strong> 1,800+ customers<br />
+<strong>Plugin Deployed:</strong> InsightHub<br />
+<strong>Result:</strong> 28% reduction in churn</p>
+<h3 id="greeneco-store">GreenEco Store</h3>
+<p><strong>Type:</strong> Sustainable living products<br />
+<strong>Customers:</strong> 3,200+ customers<br />
+<strong>Plugin Deployed:</strong> SegmentAI<br />
+<strong>Result:</strong> Better targeted email campaigns</p>
+<h3 id="techstyle-apparel">TechStyle Apparel</h3>
+<p><strong>Type:</strong> Tech-inspired clothing<br />
+<strong>Customers:</strong> 4,100+ customers<br />
+<strong>Plugin Deployed:</strong> None (insights report provided)</p>
+<hr />
+<h2 id="event-highlights">Event Highlights</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+  <div style="background: linear-gradient(135deg, #00A896 0%, #00C4AD 100%); color: #FEFEFE; padding: 1.5rem; border-radius: 8px; text-align: center;">
+    <h3 style="color: #FEFEFE; margin: 0; font-size: 2.5rem;">12</h3>
+    <p style="margin: 0.5rem 0 0 0;">Participants</p>
+  </div>
+  <div style="background: linear-gradient(135deg, #FF6F61 0%, #FF8A7F 100%); color: #FEFEFE; padding: 1.5rem; border-radius: 8px; text-align: center;">
+    <h3 style="color: #FEFEFE; margin: 0; font-size: 2.5rem;">2</h3>
+    <p style="margin: 0.5rem 0 0 0;">Plugins Deployed</p>
+  </div>
+  <div style="background: linear-gradient(135deg, #FFD23F 0%, #FFE066 100%); color: #0D0D0D; padding: 1.5rem; border-radius: 8px; text-align: center;">
+    <h3 style="color: #0D0D0D; margin: 0; font-size: 2.5rem;">25%</h3>
+    <p style="margin: 0.5rem 0 0 0;">Avg ROI Increase</p>
+  </div>
+  <div style="background: linear-gradient(135deg, #00A896 0%, #00C4AD 100%); color: #FEFEFE; padding: 1.5rem; border-radius: 8px; text-align: center;">
+    <h3 style="color: #FEFEFE; margin: 0; font-size: 2.5rem;">4</h3>
+    <p style="margin: 0.5rem 0 0 0;">Businesses Helped</p>
+  </div>
+</div>
+
+<hr />
+<h2 id="mentor-insights">Mentor Insights</h2>
+<h3 id="jeff-cogswells-architecture-workshop">Jeff Cogswell's Architecture Workshop</h3>
+<p>Jeff led a session on building scalable dashboard architectures, covering:
+- Real-time data updates vs. batch processing
+- Component-based UI design
+- API design best practices
+- Security considerations for customer data</p>
+<h3 id="thomas-seebers-data-storytelling-session">Thomas Seeber's Data Storytelling Session</h3>
+<p>Thomas taught participants how to:
+- Translate ML results into business language
+- Create compelling visualizations
+- Present confidence levels appropriately
+- Frame recommendations as actionable next steps</p>
+<hr />
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="../" class="cta-button">View Upcoming Hackathons</a>
+  <a href="../../blog/hackathons-real-world-learning/" class="cta-button">Why Hackathons Work</a>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "navigation.instant"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

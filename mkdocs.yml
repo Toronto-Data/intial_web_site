@@ -29,7 +29,7 @@ extra_css:
 
 nav:
   - Home: index.md
-  - AI Hackathons: hackathons.md
+  - AI Hackathons: hackathons/index.md
   - Strategic Partners:
       - Wuji Xuan Life Wellness: partners/wuji-xuan.md
       - Becoming a Partner: partners/becoming-partner.md

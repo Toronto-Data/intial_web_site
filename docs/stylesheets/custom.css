@@ -171,7 +171,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Links - WCAG 2.2 compliant */
 a {
-  color: #FFFFFF;
+  color: #00A896;
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
@@ -179,11 +179,12 @@ a {
 
 .md-tabs__link {
   opacity: 1.0;
+  color: #FEFEFE;
 }
 
 .md-tabs__link:hover {
   text-decoration-thickness: 2px;
-  color: #0D0D0D;
+  color: #FFD23F;
 }
 
 a:focus {

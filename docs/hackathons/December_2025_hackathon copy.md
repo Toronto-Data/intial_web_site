@@ -17,7 +17,7 @@ date: 2026-12-2506
 
 ## The Challenge
 
-Build AI-powered customer segmentation tools for e-commerce platforms that help small businesses understand their customers, identify high-value segments, and personalize marketing efforts.
+Build AI-powered customer segmentation tools for e-commerce platforms that help small businesses understand their customers, identify high-value segments, and personalize marketing efforts.  Testing this.
 
 ## Results & Impact
 

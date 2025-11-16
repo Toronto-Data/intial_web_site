@@ -29,7 +29,13 @@ extra_css:
 
 nav:
   - Home: index.md
-  - AI Hackathons: hackathons.md
+  - AI Hackathons:
+      - Overview: hackathons/index.md
+      - Current Hackathons:
+          - March 2025 AI Plugin Challenge: hackathons/march_2025_hackathon.md
+      - Previous Hackathons:
+          - October 2024 Inventory Forecasting: hackathons/october_2024_hackathon.md
+          - July 2024 Customer Insights: hackathons/july_2024_hackathon.md
   - Strategic Partners:
       - Wuji Xuan Life Wellness: partners/wuji-xuan.md
       - Becoming a Partner: partners/becoming-partner.md

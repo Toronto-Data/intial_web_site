@@ -12,8 +12,6 @@ date: 2026-12-2506
   <p>December 06, 2025 | Toronto, ON</p>
 </div>
 
-!!! success "Event Complete"
-    Successfully deployed 2 customer segmentation plugins helping 4 businesses understand their customers better.
 
 ---
 
